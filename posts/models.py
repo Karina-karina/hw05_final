@@ -24,6 +24,9 @@ class Post(models.Model):
                               related_name='group_posts')
     image = models.ImageField(upload_to='posts/', blank=True, null=True)
 
+    class Meta:
+        ordering = ('-pub_date',)
+
     def __str__(self):
         return self.text
 
@@ -35,6 +38,9 @@ class Comment(models.Model):
         User, on_delete=models.CASCADE, related_name='comment')
     text = models.TextField()
     created = models.DateTimeField('date published', auto_now_add=True)
+
+    class Meta:
+        ordering = ('-created',)
 
     def __str__(self):
         return self.text
