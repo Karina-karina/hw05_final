@@ -29,7 +29,7 @@
                 name="comment_{{ comment.id }}"
                 >{{ comment.author.username }}</a>
         </h5>
-        {{ comment.text }}
+        {{ comment.text|linebreaksbr }}
 </div>
         <small class="text-muted">{{ comment.created|date:"d M Y H:i" }}</small>
 
