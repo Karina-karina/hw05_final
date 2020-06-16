@@ -25,7 +25,7 @@
                     </li>
                     <li class="list-group-item">
                      {% if user != author %}
-                                {% if author.following.count > 0 %}
+                               {% if follow %}
                                 <a class="btn btn-lg btn-light" 
                                         href="{% url 'profile_unfollow' author.username %}" role="button"> 
                                         Отписаться 

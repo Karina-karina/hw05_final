@@ -54,3 +54,15 @@ class Follow(models.Model):
 
     def __str__(self):
         return f'follower - {self.user} following - {self.author}'
+
+
+class Like(models.Model):
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name='post_like')
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='user_like')
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='author_like')
+
+    def __str__(self):
+        return f'user_like - {self.user} author_like - {self.author} post_like - {self.post}'
